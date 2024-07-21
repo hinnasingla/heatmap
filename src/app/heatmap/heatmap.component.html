@@ -1,0 +1,11 @@
+<div class="heatmap">
+  <div>
+    <div *ngFor="let row of heatMapData; let i = index" class="heatmap-row">
+      <div *ngFor="let cell of row; let j = index" class="heatmap-cell"
+           [style.background-color]="getColorForCell(cell)">
+        {{ cell }}
+      </div>
+    </div>
+  </div>
+   <p> 24 hour data for July month </p>
+</div>

@@ -1,0 +1,31 @@
+/* event-heatmap.component.css */
+.heatmap {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left:20px;
+  }
+  
+  .heatmap-row {
+    display: flex;
+  }
+  
+  .heatmap-cell {
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 30px; /* Center content vertically */
+    font-size: 14px;
+  }
+  
+  .indicator-label {
+    display: inline;
+    margin: 6px;
+  }
+
+  .indicator-label-block {
+    display: grid;
+    margin: 6px;
+  }

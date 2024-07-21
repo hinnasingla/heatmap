@@ -1,0 +1,35 @@
+<div class="dflex flex-row">
+<label>Choose option to filter data :</label>
+    <select [(ngModel)]="selectedType" class="selectPicker">
+        <option value ="0">SELECT</option>
+        <option value ="1">Date</option>
+        <option value="2">Intensity</option>
+    </select>
+</div>
+
+<div *ngIf="selectedType =='1'">
+    <div class="dflex flex-row">
+        <div class="datepicker1">
+            <label class="lblDate">Start Date:</label>
+            <input type="date" [(ngModel)]="startDate" class="dateInput">
+        </div>
+
+        <div class="datepicker2">
+            <label class="lblDate">End Date: </label>
+            <input type="date" [(ngModel)]="endDate" class="dateInput">
+        </div>
+    </div>   
+</div>
+
+<div *ngIf="selectedType =='2'">
+    <input type="number" name="intensity" [(ngModel)]="intensity" />
+</div>
+
+<button (click)="filterData()">Search</button>
+
+<div *ngIf="eventData ; else noData ">
+    <app-heatmap [eventData]="eventData"></app-heatmap>
+</div>
+<ng-template #noData>
+    <p>No Data Available!!</p>
+</ng-template>
